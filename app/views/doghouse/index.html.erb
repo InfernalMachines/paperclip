@@ -1,0 +1,12 @@
+<h1>Doghouse#index</h1>
+
+
+
+<%= form_for @user, :html => { :multipart => true } do |form| %>
+  <%= form.file_field :pictures %>
+  <%= form.submit :Create %>
+<% end %>
+
+<% @users.each do |u|%>
+	<%= image_tag u.pictures.url(:thumb)%>
+<%end%>
